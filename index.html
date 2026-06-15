@@ -6,7 +6,7 @@
 <title>ZG Industries | Soluciones Sustentables para la Industria</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #0D2E4E;
@@ -24,7 +24,7 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: "Barlow", sans-serif; color: var(--text-body); background: var(--white); overflow-x: hidden; }
+  body { font-family: "Barlow Condensed", sans-serif; color: var(--text-body); background: var(--white); overflow-x: hidden; }
 
   /* NAV */
   nav {
@@ -37,7 +37,7 @@
   .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
   .nav-logo-icon { width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #1A5080, #2E8FCC); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .nav-logo-icon svg { width: 30px; height: 30px; }
-  .nav-logo-text { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 3px; color: white; line-height: 1; text-transform: uppercase; }
+  .nav-logo-text { font-family: "Montserrat", sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1px; color: white; line-height: 1; text-transform: uppercase; }
   .nav-logo-sub { font-size: 10px; letter-spacing: 3px; color: var(--sky); text-transform: uppercase; margin-top: 3px; font-weight: 400; }
   .nav-links { display: flex; gap: 28px; list-style: none; }
   .nav-links a { text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); transition: color 0.2s; }
@@ -55,20 +55,20 @@
   .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 26px; }
   .hero-eyebrow-line { width: 36px; height: 2px; background: var(--gold); }
   .hero-eyebrow-text { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); font-weight: 500; }
-  .hero-title { font-family: "Barlow Condensed", sans-serif; font-size: clamp(54px, 6vw, 88px); font-weight: 800; line-height: 0.92; color: white; margin-bottom: 26px; letter-spacing: 1px; text-transform: uppercase; }
+  .hero-title { font-family: "Montserrat", sans-serif; font-size: clamp(48px, 5.5vw, 80px); font-weight: 800; line-height: 1.05; color: white; margin-bottom: 26px; letter-spacing: -1px; text-transform: uppercase; }
   .hero-title span { color: var(--gold-light); display: block; }
-  .hero-subtitle { font-family: "Lora", serif; font-size: 18px; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.7; margin-bottom: 44px; max-width: 480px; }
+  .hero-subtitle { font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.7; margin-bottom: 44px; max-width: 480px; }
   .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); text-decoration: none; font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; transition: all 0.25s; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); text-decoration: none; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; transition: all 0.25s; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(196,154,42,0.3); }
-  .btn-secondary { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,0.28); color: white; text-decoration: none; font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; transition: all 0.25s; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,0.28); color: white; text-decoration: none; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; transition: all 0.25s; }
   .btn-secondary:hover { border-color: var(--sky); background: rgba(139,189,217,0.1); }
   .hero-right { display: flex; flex-direction: column; gap: 16px; }
   .hero-stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; backdrop-filter: blur(8px); transition: all 0.3s; animation: fadeSlideIn 0.6s ease both; }
   .hero-stat-card:nth-child(1){animation-delay:0.1s} .hero-stat-card:nth-child(2){animation-delay:0.25s} .hero-stat-card:nth-child(3){animation-delay:0.4s}
   .hero-stat-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,154,42,0.4); transform: translateX(-6px); }
   .stat-icon { width: 52px; height: 52px; border-radius: 10px; background: linear-gradient(135deg, var(--blue), var(--steel)); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-  .stat-number { font-family: "Barlow Condensed", sans-serif; font-size: 32px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; line-height: 1; }
+  .stat-number { font-family: "Montserrat", sans-serif; font-size: 32px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; line-height: 1; }
   .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 3px; }
   .hero-scroll { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.35); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; animation: scrollBounce 2s ease-in-out infinite; }
   @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
@@ -79,7 +79,7 @@
   .section-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px; }
   .section-label-line { width: 30px; height: 2px; background: var(--gold); }
   .section-label-text { font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-  .section-title { font-family: "Barlow Condensed", sans-serif; font-size: clamp(36px, 4vw, 54px); font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 24px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .section-title { font-family: "Montserrat", sans-serif; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 24px; letter-spacing: -0.5px; text-transform: uppercase; }
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -114,16 +114,16 @@
 
   /* NOSOTROS */
   #nosotros { padding: 100px 60px; background: var(--cream); position: relative; overflow: hidden; }
-  #nosotros::before { content: "ZG"; position: absolute; font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 300px; color: rgba(26,80,128,0.05); right: -40px; top: -20px; line-height: 1; pointer-events: none; user-select: none; }
+  #nosotros::before { content: "ZG"; position: absolute; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 300px; color: rgba(26,80,128,0.05); right: -40px; top: -20px; line-height: 1; pointer-events: none; user-select: none; }
   .nos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .nos-text p { font-family: "Lora", serif; font-size: 17px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
+  .nos-text p { font-family: "Barlow Condensed", sans-serif; font-size: 17px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
   .nos-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
   .nos-value { border-left: 3px solid var(--gold); padding-left: 16px; }
-  .nos-value-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; }
+  .nos-value-title { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; letter-spacing: -0.2px; }
   .nos-value-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.5; }
   .nos-card-main { background: var(--navy); border-radius: 16px; padding: 40px; color: white; position: relative; overflow: hidden; }
   .nos-card-main::before { content: ""; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(36,112,168,0.4) 0%, transparent 70%); }
-  .nos-card-main-title { font-family: "Barlow Condensed", sans-serif; font-size: 40px; font-weight: 800; letter-spacing: 2px; margin-bottom: 6px; color: var(--gold-light); text-transform: uppercase; }
+  .nos-card-main-title { font-family: "Montserrat", sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; color: var(--gold-light); text-transform: uppercase; }
   .nos-card-main-sub { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 28px; }
   .nos-card-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
   .nos-card-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.8); }
@@ -141,7 +141,7 @@
   .sol-card:hover::after { transform: scaleX(1); }
   .sol-card-icon { width: 60px; height: 60px; border-radius: 14px; background: var(--gray-light); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 24px; transition: background 0.3s; }
   .sol-card:hover .sol-card-icon { background: linear-gradient(135deg, var(--blue), var(--steel)); }
-  .sol-card-title { font-family: "Barlow Condensed", sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 12px; text-transform: uppercase; }
+  .sol-card-title { font-family: "Montserrat", sans-serif; font-size: 21px; font-weight: 800; color: var(--navy); margin-bottom: 12px; text-transform: uppercase; letter-spacing: -0.3px; }
   .sol-card-desc { font-size: 14px; color: #5A6A7A; line-height: 1.7; margin-bottom: 20px; }
   .sol-card-specs { list-style: none; display: flex; flex-direction: column; gap: 8px; }
   .sol-card-specs li { font-size: 13px; color: var(--gray-mid); display: flex; align-items: center; gap: 8px; }
@@ -158,40 +158,40 @@
   .sust-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
   .sust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .sust-text .section-title { color: white; }
-  .sust-text p { font-family: "Lora", serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 16px; }
+  .sust-text p { font-family: "Barlow Condensed", sans-serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 16px; }
   .sust-phases { display: flex; flex-direction: column; gap: 20px; }
   .sust-phase { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 28px; display: flex; gap: 20px; align-items: flex-start; transition: all 0.3s; }
   .sust-phase:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,154,42,0.4); }
-  .sust-phase-num { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 48px; color: var(--gold); line-height: 1; flex-shrink: 0; width: 50px; opacity: 0.5; }
-  .sust-phase-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 18px; color: white; margin-bottom: 6px; text-transform: uppercase; }
+  .sust-phase-num { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 48px; color: var(--gold); line-height: 1; flex-shrink: 0; width: 50px; opacity: 0.5; }
+  .sust-phase-title { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 15px; color: white; margin-bottom: 6px; text-transform: uppercase; letter-spacing: -0.2px; }
   .sust-phase-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
 
   /* TPMS SECTION */
   #tpms { padding: 100px 60px; background: var(--white); }
   .tpms-header { text-align: center; margin-bottom: 64px; }
   .tpms-header .section-label { justify-content: center; }
-  .tpms-header p { font-family: "Lora", serif; font-size: 17px; color: #5A6A7A; max-width: 640px; margin: 16px auto 0; line-height: 1.7; }
+  .tpms-header p { font-family: "Barlow Condensed", sans-serif; font-size: 17px; color: #5A6A7A; max-width: 640px; margin: 16px auto 0; line-height: 1.7; }
 
   .tpms-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto 70px; }
   .tpms-hero-img { height: 320px; }
-  .tpms-hero-text p { font-family: "Lora", serif; font-size: 16px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
+  .tpms-hero-text p { font-family: "Barlow Condensed", sans-serif; font-size: 16px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
 
   .tpms-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto 70px; }
   .tpms-stat { background: var(--navy); border-radius: 14px; padding: 32px 24px; text-align: center; }
-  .tpms-stat-value { font-family: "Barlow Condensed", sans-serif; font-size: 52px; font-weight: 800; color: var(--gold-light); line-height: 1; }
-  .tpms-stat-unit { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 600; color: var(--sky); }
+  .tpms-stat-value { font-family: "Montserrat", sans-serif; font-size: 52px; font-weight: 800; color: var(--gold-light); line-height: 1; }
+  .tpms-stat-unit { font-family: "Montserrat", sans-serif; font-size: 22px; font-weight: 600; color: var(--sky); }
   .tpms-stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 8px; line-height: 1.4; }
 
   .tpms-features { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 1200px; margin: 0 auto 70px; }
   .tpms-feat { background: var(--cream); border-radius: 14px; padding: 28px 22px; border-bottom: 3px solid var(--gold); transition: all 0.3s; }
   .tpms-feat:hover { background: white; box-shadow: 0 12px 40px rgba(13,46,78,0.1); transform: translateY(-4px); }
   .tpms-feat-icon { font-size: 32px; margin-bottom: 14px; }
-  .tpms-feat-title { font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; }
+  .tpms-feat-title { font-family: "Montserrat", sans-serif; font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; letter-spacing: -0.2px; }
   .tpms-feat-desc { font-size: 13px; color: #5A6A7A; line-height: 1.6; }
 
   .tpms-data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
   .tpms-data-card { background: var(--cream); border-radius: 16px; padding: 36px; }
-  .tpms-data-title { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 20px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+  .tpms-data-title { font-family: "Montserrat", sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 20px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; letter-spacing: -0.2px; }
   .tpms-data-img { height: 200px; margin-bottom: 20px; }
   .tpms-data-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .tpms-data-list li { font-size: 14px; color: #3A4A5A; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
@@ -201,30 +201,30 @@
   .tpms-spec { background: white; border: 1px solid var(--gray-light); border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; }
   .tpms-spec-icon { font-size: 20px; flex-shrink: 0; }
   .tpms-spec-label { font-size: 11px; color: var(--gray-mid); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
-  .tpms-spec-value { font-family: "Barlow Condensed", sans-serif; font-size: 17px; font-weight: 700; color: var(--navy); }
+  .tpms-spec-value { font-family: "Montserrat", sans-serif; font-size: 17px; font-weight: 700; color: var(--navy); }
 
   /* CPK */
   #cpk { padding: 100px 60px; background: var(--cream); }
   .cpk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
   .cpk-calc { background: white; border-radius: 20px; padding: 44px; box-shadow: 0 24px 72px rgba(13,46,78,0.1); }
-  .cpk-calc-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; }
+  .cpk-calc-title { font-family: "Montserrat", sans-serif; font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; letter-spacing: -0.3px; }
   .cpk-calc-sub { font-size: 13px; color: var(--gray-mid); margin-bottom: 32px; }
   .calc-label { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; display: block; }
   .calc-field { margin-bottom: 20px; }
-  .calc-input, .calc-select { width: 100%; padding: 14px 18px; border: 1.5px solid var(--gray-light); border-radius: 8px; font-family: "Barlow", sans-serif; font-size: 15px; color: var(--navy); transition: border-color 0.2s; outline: none; background: var(--white); }
+  .calc-input, .calc-select { width: 100%; padding: 14px 18px; border: 1.5px solid var(--gray-light); border-radius: 8px; font-family: "Barlow Condensed", sans-serif; font-size: 15px; color: var(--navy); transition: border-color 0.2s; outline: none; background: var(--white); }
   .calc-input:focus, .calc-select:focus { border-color: var(--blue); }
-  .calc-btn { width: 100%; padding: 16px; background: var(--navy); color: white; border: none; border-radius: 8px; font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: all 0.25s; margin-top: 8px; text-transform: uppercase; }
+  .calc-btn { width: 100%; padding: 16px; background: var(--navy); color: white; border: none; border-radius: 8px; font-family: "Montserrat", sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: all 0.25s; margin-top: 8px; text-transform: uppercase; }
   .calc-btn:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,80,128,0.3); }
   .calc-result { margin-top: 24px; padding: 24px; background: var(--navy); border-radius: 12px; display: none; }
   .calc-result.show { display: block; }
   .calc-result-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
-  .calc-result-value { font-family: "Barlow Condensed", sans-serif; font-size: 42px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; line-height: 1; }
+  .calc-result-value { font-family: "Montserrat", sans-serif; font-size: 42px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; line-height: 1; }
   .calc-result-desc { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 10px; line-height: 1.5; }
-  .cpk-info p { font-family: "Lora", serif; font-size: 17px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
+  .cpk-info p { font-family: "Barlow Condensed", sans-serif; font-size: 17px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
   .cpk-items { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
   .cpk-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: white; border-radius: 10px; border: 1px solid var(--gray-light); }
   .cpk-item-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
-  .cpk-item-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 3px; text-transform: uppercase; }
+  .cpk-item-title { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 3px; text-transform: uppercase; letter-spacing: -0.2px; }
   .cpk-item-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.5; }
 
   /* SECTORES */
@@ -241,7 +241,7 @@
   .sector-card.otr { background: linear-gradient(135deg, #3A2010, #6B3A1A); }
   .sector-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%); }
   .sector-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; display: block; font-weight: 500; }
-  .sector-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; color: white; margin-bottom: 8px; text-transform: uppercase; }
+  .sector-title { font-family: "Montserrat", sans-serif; font-size: 22px; font-weight: 800; color: white; margin-bottom: 8px; text-transform: uppercase; letter-spacing: -0.3px; }
   .sector-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
 
   /* ALIADOS */
@@ -253,15 +253,15 @@
   .aliado-card:hover { border-color: var(--blue); box-shadow: 0 16px 48px rgba(13,46,78,0.1); transform: translateY(-4px); }
   .aliado-logo-box { width: 120px; height: 70px; display: flex; align-items: center; justify-content: center; }
   .aliado-logo-ddnai { width: 120px; height: 70px; border-radius: 8px; background: linear-gradient(135deg, #1A5A2A, #2E9B4A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
-  .aliado-logo-ddnai span:first-child { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: 2px; }
+  .aliado-logo-ddnai span:first-child { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: 2px; }
   .aliado-logo-ddnai span:last-child { font-size: 7px; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; }
   .aliado-logo-seba { width: 120px; height: 70px; border-radius: 8px; background: linear-gradient(135deg, #1A1A2E, #C0392B); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
-  .aliado-logo-seba span:first-child { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 26px; color: white; letter-spacing: 3px; }
+  .aliado-logo-seba span:first-child { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 26px; color: white; letter-spacing: 3px; }
   .aliado-logo-seba span:last-child { font-size: 7px; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
   .aliado-logo-apollo { width: 120px; height: 70px; border-radius: 8px; background: linear-gradient(135deg, #0A0A0A, #2C2C2C); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
-  .aliado-logo-apollo span:first-child { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: 2px; }
+  .aliado-logo-apollo span:first-child { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: 2px; }
   .aliado-logo-apollo span:last-child { font-size: 7px; letter-spacing: 2px; color: rgba(255,255,255,0.55); text-transform: uppercase; }
-  .aliado-name { font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+  .aliado-name { font-family: "Montserrat", sans-serif; font-size: 15px; font-weight: 800; color: var(--navy); letter-spacing: -0.1px; text-transform: uppercase; text-align: center; }
   .aliado-role { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 500; text-align: center; margin-top: -6px; }
   .aliado-desc { font-size: 13px; color: #5A6A7A; line-height: 1.6; text-align: center; }
   .aliado-note { font-size: 11px; color: var(--gray-mid); text-align: center; font-style: italic; }
@@ -272,7 +272,7 @@
   .contacto-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
   .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .contacto-left .section-title { color: white; }
-  .contacto-left p { font-family: "Lora", serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 36px; }
+  .contacto-left p { font-family: "Barlow Condensed", sans-serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 36px; }
   .contact-methods { display: flex; flex-direction: column; gap: 14px; }
   .contact-method { display: flex; align-items: center; gap: 16px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; transition: all 0.25s; }
   .contact-method:hover { border-color: var(--gold); background: rgba(196,154,42,0.07); color: white; }
@@ -280,21 +280,21 @@
   .contact-method-label { font-size: 10px; color: var(--gray-mid); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 2px; }
   .contact-method-value { font-size: 15px; font-weight: 500; }
   .contacto-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 20px; padding: 44px; }
-  .form-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; color: white; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase; }
+  .form-title { font-family: "Montserrat", sans-serif; font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px; letter-spacing: -0.3px; text-transform: uppercase; }
   .form-sub { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 32px; }
   .form-field { margin-bottom: 18px; }
   .form-label { display: block; font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
-  .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.11); border-radius: 8px; color: white; font-family: "Barlow", sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
+  .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.11); border-radius: 8px; color: white; font-family: "Barlow Condensed", sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
   .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.22); }
   .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
   .form-select option { background: var(--navy); color: white; }
   .form-textarea { resize: vertical; min-height: 90px; }
-  .form-btn { width: 100%; padding: 16px; background: var(--gold); color: var(--navy); border: none; border-radius: 8px; font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.25s; margin-top: 8px; }
+  .form-btn { width: 100%; padding: 16px; background: var(--gold); color: var(--navy); border: none; border-radius: 8px; font-family: "Montserrat", sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.25s; margin-top: 8px; }
   .form-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,154,42,0.4); }
 
   /* FOOTER */
   footer { background: #050F18; padding: 36px 60px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); }
-  .footer-logo { font-family: "Barlow Condensed", sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 3px; color: white; text-transform: uppercase; }
+  .footer-logo { font-family: "Montserrat", sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 3px; color: white; text-transform: uppercase; }
   .footer-logo span { color: var(--gold); }
   .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
   .footer-region { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 2px; text-transform: uppercase; }
@@ -604,7 +604,7 @@
   <div class="aliados-header reveal">
     <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Respaldo de marca</span></div>
     <h2 class="section-title">Aliados comerciales</h2>
-    <p style="font-family:'Lora',serif;font-size:17px;color:#5A6A7A;max-width:560px;margin:16px auto 0;line-height:1.7;">Trabajamos con distribuidores y marcas líderes en el sector para garantizar calidad y disponibilidad en toda la región.</p>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:17px;color:#5A6A7A;max-width:560px;margin:16px auto 0;line-height:1.7;">Trabajamos con distribuidores y marcas líderes en el sector para garantizar calidad y disponibilidad en toda la región.</p>
   </div>
   <div class="aliados-grid">
     <div class="aliado-card reveal">
