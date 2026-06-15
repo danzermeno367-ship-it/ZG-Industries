@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZG Industries | Soluciones Sustentables para la Industria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D2E4E;
+    --blue: #1A5080;
+    --blue-mid: #2470A8;
+    --steel: #4A8AB5;
+    --sky: #8BBDD9;
+    --gold: #C49A2A;
+    --gold-light: #E8B84B;
+    --cream: #F4EFE6;
+    --white: #FAFCFE;
+    --gray-light: #E8EEF4;
+    --gray-mid: #9AAAB8;
+    --text-body: #2C3E50;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Barlow", sans-serif; color: var(--text-body); background: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(13,46,78,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07); transition: all 0.3s;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo-icon { width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #1A5080, #2E8FCC); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-logo-icon svg { width: 30px; height: 30px; }
+  .nav-logo-text { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 3px; color: white; line-height: 1; text-transform: uppercase; }
+  .nav-logo-sub { font-size: 10px; letter-spacing: 3px; color: var(--sky); text-transform: uppercase; margin-top: 3px; font-weight: 400; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta { background: var(--gold) !important; color: var(--navy) !important; font-weight: 700 !important; padding: 10px 24px; border-radius: 4px; }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* HERO */
+  #hero { min-height: 100vh; background: var(--navy); position: relative; display: flex; align-items: center; overflow: hidden; }
+  .hero-bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(36,112,168,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(36,112,168,0.1) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
+  .hero-glow { position: absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(36,112,168,0.22) 0%, transparent 70%); top: -100px; right: -100px; pointer-events: none; }
+  .hero-glow2 { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,42,0.1) 0%, transparent 70%); bottom: 50px; left: 80px; pointer-events: none; }
+  .hero-diagonal { position: absolute; right: 0; top: 0; bottom: 0; width: 42%; background: linear-gradient(135deg, rgba(26,80,128,0.35) 0%, rgba(13,46,78,0.85) 100%); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
+  .hero-content { position: relative; z-index: 2; padding: 130px 60px 90px; max-width: 1200px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 26px; }
+  .hero-eyebrow-line { width: 36px; height: 2px; background: var(--gold); }
+  .hero-eyebrow-text { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); font-weight: 500; }
+  .hero-title { font-family: "Barlow Condensed", sans-serif; font-size: clamp(54px, 6vw, 88px); font-weight: 800; line-height: 0.92; color: white; margin-bottom: 26px; letter-spacing: 1px; text-transform: uppercase; }
+  .hero-title span { color: var(--gold-light); display: block; }
+  .hero-subtitle { font-family: "Lora", serif; font-size: 18px; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.7; margin-bottom: 44px; max-width: 480px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); text-decoration: none; font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; transition: all 0.25s; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(196,154,42,0.3); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,0.28); color: white; text-decoration: none; font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; transition: all 0.25s; }
+  .btn-secondary:hover { border-color: var(--sky); background: rgba(139,189,217,0.1); }
+  .hero-right { display: flex; flex-direction: column; gap: 16px; }
+  .hero-stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; backdrop-filter: blur(8px); transition: all 0.3s; animation: fadeSlideIn 0.6s ease both; }
+  .hero-stat-card:nth-child(1){animation-delay:0.1s} .hero-stat-card:nth-child(2){animation-delay:0.25s} .hero-stat-card:nth-child(3){animation-delay:0.4s}
+  .hero-stat-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,154,42,0.4); transform: translateX(-6px); }
+  .stat-icon { width: 52px; height: 52px; border-radius: 10px; background: linear-gradient(135deg, var(--blue), var(--steel)); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .stat-number { font-family: "Barlow Condensed", sans-serif; font-size: 32px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; line-height: 1; }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 3px; }
+  .hero-scroll { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.35); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; animation: scrollBounce 2s ease-in-out infinite; }
+  @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+  @keyframes fadeSlideIn { from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
+
+  /* SHARED */
+  .section-container { max-width: 1200px; margin: 0 auto; }
+  .section-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .section-label-line { width: 30px; height: 2px; background: var(--gold); }
+  .section-label-text { font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  .section-title { font-family: "Barlow Condensed", sans-serif; font-size: clamp(36px, 4vw, 54px); font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 24px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* IMG PLACEHOLDER */
+  .img-placeholder {
+    background: linear-gradient(135deg, var(--gray-light), #D0DCE8);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--gray-mid);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #C0D0E0;
+    position: relative;
+  }
+  .img-placeholder::before {
+    content: "📷";
+    font-size: 32px;
+  }
+  .img-placeholder .img-label {
+    font-size: 11px;
+    color: var(--steel);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* NOSOTROS */
+  #nosotros { padding: 100px 60px; background: var(--cream); position: relative; overflow: hidden; }
+  #nosotros::before { content: "ZG"; position: absolute; font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 300px; color: rgba(26,80,128,0.05); right: -40px; top: -20px; line-height: 1; pointer-events: none; user-select: none; }
+  .nos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .nos-text p { font-family: "Lora", serif; font-size: 17px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
+  .nos-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
+  .nos-value { border-left: 3px solid var(--gold); padding-left: 16px; }
+  .nos-value-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; }
+  .nos-value-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.5; }
+  .nos-card-main { background: var(--navy); border-radius: 16px; padding: 40px; color: white; position: relative; overflow: hidden; }
+  .nos-card-main::before { content: ""; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(36,112,168,0.4) 0%, transparent 70%); }
+  .nos-card-main-title { font-family: "Barlow Condensed", sans-serif; font-size: 40px; font-weight: 800; letter-spacing: 2px; margin-bottom: 6px; color: var(--gold-light); text-transform: uppercase; }
+  .nos-card-main-sub { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 28px; }
+  .nos-card-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .nos-card-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.8); }
+  .nos-card-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+  .nos-badge { display: inline-block; margin-top: 28px; background: var(--gold); color: var(--navy); border-radius: 8px; padding: 12px 18px; font-weight: 700; font-size: 13px; }
+
+  /* SOLUCIONES */
+  #soluciones { padding: 100px 60px; background: var(--white); }
+  .sol-header { text-align: center; margin-bottom: 70px; }
+  .sol-header .section-label { justify-content: center; }
+  .sol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .sol-card { background: var(--white); border: 1px solid var(--gray-light); border-radius: 16px; padding: 36px 30px; position: relative; overflow: hidden; transition: all 0.35s; }
+  .sol-card::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+  .sol-card:hover { border-color: transparent; box-shadow: 0 20px 60px rgba(13,46,78,0.12); transform: translateY(-6px); }
+  .sol-card:hover::after { transform: scaleX(1); }
+  .sol-card-icon { width: 60px; height: 60px; border-radius: 14px; background: var(--gray-light); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 24px; transition: background 0.3s; }
+  .sol-card:hover .sol-card-icon { background: linear-gradient(135deg, var(--blue), var(--steel)); }
+  .sol-card-title { font-family: "Barlow Condensed", sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 12px; text-transform: uppercase; }
+  .sol-card-desc { font-size: 14px; color: #5A6A7A; line-height: 1.7; margin-bottom: 20px; }
+  .sol-card-specs { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .sol-card-specs li { font-size: 13px; color: var(--gray-mid); display: flex; align-items: center; gap: 8px; }
+  .sol-card-specs li::before { content: "→"; color: var(--gold); font-weight: 700; }
+  .sol-card.featured { background: var(--navy); border-color: transparent; }
+  .sol-card.featured .sol-card-title { color: white; }
+  .sol-card.featured .sol-card-desc, .sol-card.featured .sol-card-specs li { color: rgba(255,255,255,0.7); }
+  .sol-card.featured::after { background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(1); }
+  .sol-badge { position: absolute; top: 20px; right: 20px; background: var(--gold); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; }
+
+  /* SUSTENTABILIDAD */
+  #sustentabilidad { padding: 100px 60px; background: var(--navy); position: relative; overflow: hidden; }
+  #sustentabilidad::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(36,112,168,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(36,112,168,0.08) 1px, transparent 1px); background-size: 80px 80px; }
+  .sust-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+  .sust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sust-text .section-title { color: white; }
+  .sust-text p { font-family: "Lora", serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 16px; }
+  .sust-phases { display: flex; flex-direction: column; gap: 20px; }
+  .sust-phase { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 28px; display: flex; gap: 20px; align-items: flex-start; transition: all 0.3s; }
+  .sust-phase:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,154,42,0.4); }
+  .sust-phase-num { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 48px; color: var(--gold); line-height: 1; flex-shrink: 0; width: 50px; opacity: 0.5; }
+  .sust-phase-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 18px; color: white; margin-bottom: 6px; text-transform: uppercase; }
+  .sust-phase-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* TPMS SECTION */
+  #tpms { padding: 100px 60px; background: var(--white); }
+  .tpms-header { text-align: center; margin-bottom: 64px; }
+  .tpms-header .section-label { justify-content: center; }
+  .tpms-header p { font-family: "Lora", serif; font-size: 17px; color: #5A6A7A; max-width: 640px; margin: 16px auto 0; line-height: 1.7; }
+
+  .tpms-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto 70px; }
+  .tpms-hero-img { height: 320px; }
+  .tpms-hero-text p { font-family: "Lora", serif; font-size: 16px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
+
+  .tpms-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto 70px; }
+  .tpms-stat { background: var(--navy); border-radius: 14px; padding: 32px 24px; text-align: center; }
+  .tpms-stat-value { font-family: "Barlow Condensed", sans-serif; font-size: 52px; font-weight: 800; color: var(--gold-light); line-height: 1; }
+  .tpms-stat-unit { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 600; color: var(--sky); }
+  .tpms-stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 8px; line-height: 1.4; }
+
+  .tpms-features { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 1200px; margin: 0 auto 70px; }
+  .tpms-feat { background: var(--cream); border-radius: 14px; padding: 28px 22px; border-bottom: 3px solid var(--gold); transition: all 0.3s; }
+  .tpms-feat:hover { background: white; box-shadow: 0 12px 40px rgba(13,46,78,0.1); transform: translateY(-4px); }
+  .tpms-feat-icon { font-size: 32px; margin-bottom: 14px; }
+  .tpms-feat-title { font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; }
+  .tpms-feat-desc { font-size: 13px; color: #5A6A7A; line-height: 1.6; }
+
+  .tpms-data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+  .tpms-data-card { background: var(--cream); border-radius: 16px; padding: 36px; }
+  .tpms-data-title { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 20px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+  .tpms-data-img { height: 200px; margin-bottom: 20px; }
+  .tpms-data-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tpms-data-list li { font-size: 14px; color: #3A4A5A; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .tpms-data-list li::before { content: "✓"; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .tpms-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1200px; margin: 40px auto 0; }
+  .tpms-spec { background: white; border: 1px solid var(--gray-light); border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; }
+  .tpms-spec-icon { font-size: 20px; flex-shrink: 0; }
+  .tpms-spec-label { font-size: 11px; color: var(--gray-mid); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
+  .tpms-spec-value { font-family: "Barlow Condensed", sans-serif; font-size: 17px; font-weight: 700; color: var(--navy); }
+
+  /* CPK */
+  #cpk { padding: 100px 60px; background: var(--cream); }
+  .cpk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .cpk-calc { background: white; border-radius: 20px; padding: 44px; box-shadow: 0 24px 72px rgba(13,46,78,0.1); }
+  .cpk-calc-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; }
+  .cpk-calc-sub { font-size: 13px; color: var(--gray-mid); margin-bottom: 32px; }
+  .calc-label { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; display: block; }
+  .calc-field { margin-bottom: 20px; }
+  .calc-input, .calc-select { width: 100%; padding: 14px 18px; border: 1.5px solid var(--gray-light); border-radius: 8px; font-family: "Barlow", sans-serif; font-size: 15px; color: var(--navy); transition: border-color 0.2s; outline: none; background: var(--white); }
+  .calc-input:focus, .calc-select:focus { border-color: var(--blue); }
+  .calc-btn { width: 100%; padding: 16px; background: var(--navy); color: white; border: none; border-radius: 8px; font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: all 0.25s; margin-top: 8px; text-transform: uppercase; }
+  .calc-btn:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,80,128,0.3); }
+  .calc-result { margin-top: 24px; padding: 24px; background: var(--navy); border-radius: 12px; display: none; }
+  .calc-result.show { display: block; }
+  .calc-result-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .calc-result-value { font-family: "Barlow Condensed", sans-serif; font-size: 42px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; line-height: 1; }
+  .calc-result-desc { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 10px; line-height: 1.5; }
+  .cpk-info p { font-family: "Lora", serif; font-size: 17px; line-height: 1.8; color: #3A4A5A; margin-bottom: 20px; }
+  .cpk-items { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .cpk-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: white; border-radius: 10px; border: 1px solid var(--gray-light); }
+  .cpk-item-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .cpk-item-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 3px; text-transform: uppercase; }
+  .cpk-item-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.5; }
+
+  /* SECTORES */
+  #sectores { padding: 100px 60px; background: var(--navy); }
+  .sectores-header { text-align: center; margin-bottom: 64px; }
+  .sectores-header .section-label { justify-content: center; }
+  .sectores-header .section-title { color: white; }
+  .sectores-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+  .sector-card { border-radius: 16px; overflow: hidden; position: relative; height: 300px; transition: transform 0.35s; }
+  .sector-card:hover { transform: scale(1.02); }
+  .sector-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 110px; opacity: 0.18; }
+  .sector-card.agro { background: linear-gradient(135deg, #0D3826, #1A6B45); }
+  .sector-card.transport { background: linear-gradient(135deg, #1A2D4E, #2A5080); }
+  .sector-card.otr { background: linear-gradient(135deg, #3A2010, #6B3A1A); }
+  .sector-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%); }
+  .sector-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; display: block; font-weight: 500; }
+  .sector-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; color: white; margin-bottom: 8px; text-transform: uppercase; }
+  .sector-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+  /* ALIADOS */
+  #aliados { padding: 80px 60px; background: var(--cream); }
+  .aliados-header { text-align: center; margin-bottom: 56px; }
+  .aliados-header .section-label { justify-content: center; }
+  .aliados-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; max-width: 1000px; margin: 0 auto; }
+  .aliado-card { background: white; border: 1px solid var(--gray-light); border-radius: 16px; padding: 36px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; transition: all 0.3s; }
+  .aliado-card:hover { border-color: var(--blue); box-shadow: 0 16px 48px rgba(13,46,78,0.1); transform: translateY(-4px); }
+  .aliado-logo-box { width: 120px; height: 70px; display: flex; align-items: center; justify-content: center; }
+  .aliado-logo-ddnai { width: 120px; height: 70px; border-radius: 8px; background: linear-gradient(135deg, #1A5A2A, #2E9B4A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+  .aliado-logo-ddnai span:first-child { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: 2px; }
+  .aliado-logo-ddnai span:last-child { font-size: 7px; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; }
+  .aliado-logo-seba { width: 120px; height: 70px; border-radius: 8px; background: linear-gradient(135deg, #1A1A2E, #C0392B); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+  .aliado-logo-seba span:first-child { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 26px; color: white; letter-spacing: 3px; }
+  .aliado-logo-seba span:last-child { font-size: 7px; letter-spacing: 2px; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+  .aliado-logo-apollo { width: 120px; height: 70px; border-radius: 8px; background: linear-gradient(135deg, #0A0A0A, #2C2C2C); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+  .aliado-logo-apollo span:first-child { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: 2px; }
+  .aliado-logo-apollo span:last-child { font-size: 7px; letter-spacing: 2px; color: rgba(255,255,255,0.55); text-transform: uppercase; }
+  .aliado-name { font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+  .aliado-role { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 500; text-align: center; margin-top: -6px; }
+  .aliado-desc { font-size: 13px; color: #5A6A7A; line-height: 1.6; text-align: center; }
+  .aliado-note { font-size: 11px; color: var(--gray-mid); text-align: center; font-style: italic; }
+
+  /* CONTACTO */
+  #contacto { padding: 100px 60px; background: var(--navy); position: relative; overflow: hidden; }
+  #contacto::before { content: ""; position: absolute; bottom: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,42,0.1) 0%, transparent 70%); }
+  .contacto-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contacto-left .section-title { color: white; }
+  .contacto-left p { font-family: "Lora", serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 36px; }
+  .contact-methods { display: flex; flex-direction: column; gap: 14px; }
+  .contact-method { display: flex; align-items: center; gap: 16px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; transition: all 0.25s; }
+  .contact-method:hover { border-color: var(--gold); background: rgba(196,154,42,0.07); color: white; }
+  .contact-method-icon { font-size: 20px; flex-shrink: 0; }
+  .contact-method-label { font-size: 10px; color: var(--gray-mid); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 2px; }
+  .contact-method-value { font-size: 15px; font-weight: 500; }
+  .contacto-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 20px; padding: 44px; }
+  .form-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; color: white; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase; }
+  .form-sub { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 32px; }
+  .form-field { margin-bottom: 18px; }
+  .form-label { display: block; font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
+  .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.11); border-radius: 8px; color: white; font-family: "Barlow", sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.22); }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+  .form-select option { background: var(--navy); color: white; }
+  .form-textarea { resize: vertical; min-height: 90px; }
+  .form-btn { width: 100%; padding: 16px; background: var(--gold); color: var(--navy); border: none; border-radius: 8px; font-family: "Barlow Condensed", sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.25s; margin-top: 8px; }
+  .form-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,154,42,0.4); }
+
+  /* FOOTER */
+  footer { background: #050F18; padding: 36px 60px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); }
+  .footer-logo { font-family: "Barlow Condensed", sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 3px; color: white; text-transform: uppercase; }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+  .footer-region { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 2px; text-transform: uppercase; }
+
+  @media(max-width:900px){
+    nav { padding: 14px 20px; } .nav-links { display: none; }
+    #hero,#nosotros,#soluciones,#sustentabilidad,#tpms,#cpk,#sectores,#aliados,#contacto { padding: 70px 24px; }
+    .hero-content,.nos-grid,.sust-grid,.cpk-grid,.contacto-grid,.tpms-hero-grid,.tpms-data-grid { grid-template-columns: 1fr; gap: 40px; }
+    .sol-grid,.sectores-grid,.tpms-features,.tpms-specs { grid-template-columns: 1fr; }
+    .aliados-grid { grid-template-columns: 1fr; }
+    .tpms-stats { grid-template-columns: 1fr; }
+    .nos-values { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="60" height="60" rx="10" fill="url(#ng)"/>
+        <path d="M10 18 L32 18 L20 30 L32 30 L10 46" stroke="white" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M34 10 L50 10 L50 50" stroke="#8BBDD9" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M40 10 L50 10 L50 50" stroke="rgba(255,255,255,0.35)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="ng" x1="0" y1="0" x2="60" y2="60"><stop offset="0%" stop-color="#1A5080"/><stop offset="100%" stop-color="#2E8FCC"/></linearGradient></defs>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-logo-text">ZG Industries</div>
+      <div class="nav-logo-sub">Zermeño Gleason</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#soluciones">Soluciones</a></li>
+    <li><a href="#tpms">TPMS</a></li>
+    <li><a href="#cpk">Análisis CPK</a></li>
+    <li><a href="#aliados">Aliados</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-diagonal"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Región Bajío · Querétaro</span>
+      </div>
+      <h1 class="hero-title">Soluciones<br><span>industriales</span>que mueven al país</h1>
+      <p class="hero-subtitle">Más que llantas — optimizamos el costo por kilómetro de tu flotilla y construimos el futuro de la industria con visión sustentable.</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn-primary">Solicitar cotización →</a>
+        <a href="#cpk" class="btn-secondary">Calcular mi ahorro ↓</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-card"><div class="stat-icon">🏭</div><div><div class="stat-number">B2B</div><div class="stat-label">Soluciones exclusivas para empresas y flotillas</div></div></div>
+      <div class="hero-stat-card"><div class="stat-icon">📉</div><div><div class="stat-number">CPK↓</div><div class="stat-label">Reducción real de costo por kilómetro recorrido</div></div></div>
+      <div class="hero-stat-card"><div class="stat-icon">♻️</div><div><div class="stat-number">360°</div><div class="stat-label">Economía circular — del campo a la recicladora</div></div></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Descubrir</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="section-container">
+    <div class="nos-grid">
+      <div class="nos-text reveal">
+        <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Quiénes somos</span></div>
+        <h2 class="section-title">Una empresa familiar con visión de largo plazo</h2>
+        <p>ZG Industries nació en el Bajío con un propósito claro: no vender llantas, sino resolver el problema de costos que enfrentan las flotillas agroindustriales y de transporte en la región.</p>
+        <p>Somos Zermeño Gleason — fundados sobre confianza, conocimiento técnico y la convicción de que la industria mexicana merece mejores soluciones.</p>
+        <div class="nos-values">
+          <div class="nos-value"><div class="nos-value-title">Confianza</div><div class="nos-value-desc">Trato directo, sin intermediarios innecesarios</div></div>
+          <div class="nos-value"><div class="nos-value-title">Especialización</div><div class="nos-value-desc">Conocemos la llanta industrial por dentro</div></div>
+          <div class="nos-value"><div class="nos-value-title">Enfoque en ROI</div><div class="nos-value-desc">Cada propuesta incluye análisis de retorno</div></div>
+          <div class="nos-value"><div class="nos-value-title">Sustentabilidad</div><div class="nos-value-desc">Del campo al reciclaje — ciclo completo</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="nos-card-main">
+          <div class="nos-card-main-title">BAJÍO PRIMERO</div>
+          <div class="nos-card-main-sub">Cobertura regional · Respuesta rápida</div>
+          <ul class="nos-card-list">
+            <li>Distribución de llantas para trailer, tractor y OTR</li>
+            <li>Propuestas personalizadas con análisis de CPK</li>
+            <li>Asesoría técnica en selección y rotación</li>
+            <li>Seguimiento post-venta activo</li>
+            <li>Visión futura: telemetría TPMS y gestión de activos</li>
+          </ul>
+          <div class="nos-badge">📍 Querétaro, México</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIONES -->
+<section id="soluciones">
+  <div class="sol-header reveal">
+    <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Lo que hacemos</span></div>
+    <h2 class="section-title">Soluciones para cada necesidad</h2>
+  </div>
+  <div class="sol-grid">
+    <div class="sol-card reveal">
+      <div class="sol-card-icon">🚜</div>
+      <h3 class="sol-card-title">Llantas Agroindustriales</h3>
+      <p class="sol-card-desc">Equipamiento especializado para tractores y maquinaria de campo. Rendimiento en terrenos exigentes con el menor costo por hora de operación.</p>
+      <ul class="sol-card-specs"><li>Tracción para terreno irregular</li><li>Alta resistencia a cortes y perforaciones</li><li>Marcas de primer nivel con garantía km</li></ul>
+    </div>
+    <div class="sol-card featured reveal">
+      <div class="sol-badge">Principal</div>
+      <div class="sol-card-icon">🚛</div>
+      <h3 class="sol-card-title">Llantas para Trailer</h3>
+      <p class="sol-card-desc">La solución más completa para flotillas de transporte y carga. Maximizamos el rendimiento kilométrico con análisis de ruta y condición de operación.</p>
+      <ul class="sol-card-specs"><li>Posiciones: dirección, tracción y remolque</li><li>Análisis de CPK incluido en cotización</li><li>Optimización para cascos de renovado</li></ul>
+    </div>
+    <div class="sol-card reveal">
+      <div class="sol-card-icon">⚙️</div>
+      <h3 class="sol-card-title">OTR & Construcción</h3>
+      <p class="sol-card-desc">Llantas para maquinaria fuera de carretera: minería, construcción y movimiento de tierra. Resistencia extrema donde otras no llegan.</p>
+      <ul class="sol-card-specs"><li>Retroexcavadoras, grúas y motoconformadoras</li><li>Materiales de alta densidad anti-corte</li><li>Consultoría de aplicación especializada</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTENTABILIDAD -->
+<section id="sustentabilidad">
+  <div class="sust-content">
+    <div class="sust-grid">
+      <div class="sust-text reveal">
+        <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Nuestra visión</span></div>
+        <h2 class="section-title">Industria responsable.<br>Futuro circular.</h2>
+        <p>Creemos que el mayor diferenciador de una empresa no es lo que vende hoy, sino el impacto que construye para mañana.</p>
+        <p>ZG Industries desarrolla un modelo de economía circular para la industria llantera del Bajío — donde cada llanta desgastada no es residuo, sino materia prima.</p>
+      </div>
+      <div class="sust-phases">
+        <div class="sust-phase reveal"><div class="sust-phase-num">01</div><div><div class="sust-phase-title">Distribución con enfoque técnico</div><div class="sust-phase-desc">Hoy: proveemos las mejores llantas con análisis de CPK, asesoría de rotación y seguimiento de desgaste para maximizar tu inversión.</div></div></div>
+        <div class="sust-phase reveal"><div class="sust-phase-num">02</div><div><div class="sust-phase-title">Gestión inteligente de activos</div><div class="sust-phase-desc">Próximo: sensores TPMS con Bluetooth 5.0, telemetría en tiempo real e IA que transforman tu flotilla en un activo predecible y controlable.</div></div></div>
+        <div class="sust-phase reveal"><div class="sust-phase-num">03</div><div><div class="sust-phase-title">Planta recicladora de llantas</div><div class="sust-phase-desc">Futuro: recuperamos las llantas desgastadas para procesarlas como materia prima industrial. Cero desperdicio, doble valor.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TPMS -->
+<section id="tpms">
+  <div class="tpms-header reveal">
+    <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Tecnología · Próximo lanzamiento</span></div>
+    <h2 class="section-title">Sistema TPMS de 5ª Generación</h2>
+    <p>Más que monitoreo de presión — inteligencia artificial, análisis de vibración y Bluetooth 5.0 integrados en cada llanta de tu flotilla.</p>
+  </div>
+
+  <!-- Intro + imagen -->
+  <div class="tpms-hero-grid">
+    <div class="tpms-hero-text reveal">
+      <p>Los sistemas TPMS tradicionales solo miden temperatura y presión. Nuestra solución de 5ª generación va mucho más allá: detecta carga por eje, profundidad del dibujo, comportamiento al volante y kilometraje real de cada llanta — todo en tiempo real desde tu teléfono o plataforma web.</p>
+      <p>A diferencia de los sistemas con tecnología RF433MHz (tasa de pérdida de señal del 20%), nuestros sensores usan <strong>Bluetooth 5.0</strong> con una tasa de adquisición de señal del <strong>98%</strong>, mayor estabilidad y sin repetidores adicionales.</p>
+    </div>
+    <!-- IMAGEN: reemplaza este bloque con <img src="foto-sensor-tpms.jpg"> cuando tengas la imagen -->
+    <div class="img-placeholder tpms-hero-img reveal">
+      <div class="img-label">Sensor TPMS inteligente · foto del producto</div>
+      <small style="color:var(--gray-mid);font-size:11px;">Sustituir con imagen real del sensor</small>
+    </div>
+  </div>
+
+  <!-- Stats clave -->
+  <div class="tpms-stats">
+    <div class="tpms-stat reveal">
+      <div class="tpms-stat-value">98<span class="tpms-stat-unit">%</span></div>
+      <div class="tpms-stat-label">Tasa de adquisición de señal en tiempo real (vs 80% de sistemas tradicionales)</div>
+    </div>
+    <div class="tpms-stat reveal">
+      <div class="tpms-stat-value">5<span class="tpms-stat-unit">%</span></div>
+      <div class="tpms-stat-label">Ahorro en combustible por monitoreo continuo de presión y temperatura</div>
+    </div>
+    <div class="tpms-stat reveal">
+      <div class="tpms-stat-value">15<span class="tpms-stat-unit">%</span></div>
+      <div class="tpms-stat-label">Mayor vida útil de los neumáticos con gestión inteligente</div>
+    </div>
+  </div>
+
+  <!-- 4 funciones destacadas -->
+  <div class="tpms-features">
+    <div class="tpms-feat reveal">
+      <div class="tpms-feat-icon">📡</div>
+      <div class="tpms-feat-title">Bluetooth 5.0</div>
+      <div class="tpms-feat-desc">Señal estable hasta 240 metros. Sin repetidores, sin cableado complejo. Compatible con IoT y conducción autónoma.</div>
+    </div>
+    <div class="tpms-feat reveal">
+      <div class="tpms-feat-icon">🤖</div>
+      <div class="tpms-feat-title">Inteligencia Artificial</div>
+      <div class="tpms-feat-desc">Análisis predictivo de desgaste y carga por eje. Detecta anomalías antes de que se conviertan en fallas costosas.</div>
+    </div>
+    <div class="tpms-feat reveal">
+      <div class="tpms-feat-icon">📳</div>
+      <div class="tpms-feat-title">Análisis de Vibración</div>
+      <div class="tpms-feat-desc">Mide la profundidad del dibujo y la carga real de cada llanta usando patrones de vibración únicos del neumático.</div>
+    </div>
+    <div class="tpms-feat reveal">
+      <div class="tpms-feat-icon">🖥️</div>
+      <div class="tpms-feat-title">Plataforma en la Nube</div>
+      <div class="tpms-feat-desc">Dashboard completo por flotilla, alertas por SMS, historial de cada llanta y reportes de eficiencia desde cualquier dispositivo.</div>
+    </div>
+  </div>
+
+  <!-- Datos monitoreados + imagen de plataforma -->
+  <div class="tpms-data-grid">
+    <div class="tpms-data-card reveal">
+      <div class="tpms-data-title">📊 Datos monitoreados en tiempo real</div>
+      <!-- IMAGEN: reemplaza con screenshot del dashboard -->
+      <div class="img-placeholder tpms-data-img">
+        <div class="img-label">Screenshot del dashboard de monitoreo</div>
+        <small style="color:var(--gray-mid);font-size:11px;">Sustituir con imagen real de la plataforma</small>
+      </div>
+      <ul class="tpms-data-list">
+        <li>Presión y temperatura por llanta en tiempo real</li>
+        <li>Carga por eje (detecta sobrecarga antes del reventón)</li>
+        <li>Profundidad del dibujo (desgaste estimado ±1 mm)</li>
+        <li>Velocidad, altitud y kilometraje por unidad</li>
+        <li>Comportamiento al volante y rastreo GPS</li>
+      </ul>
+    </div>
+    <div class="tpms-data-card reveal">
+      <div class="tpms-data-title">🚨 Sistema de alarmas inteligentes</div>
+      <!-- IMAGEN: reemplaza con imagen de alertas/app -->
+      <div class="img-placeholder tpms-data-img">
+        <div class="img-label">App / pantalla de alertas del sistema</div>
+        <small style="color:var(--gray-mid);font-size:11px;">Sustituir con imagen real de la app o pantalla</small>
+      </div>
+      <ul class="tpms-data-list">
+        <li>Alarma de baja presión — reduce pinchazos en ruta</li>
+        <li>Alarma de alta temperatura — previene incendios</li>
+        <li>Diferencia de presión entre llantas del mismo eje</li>
+        <li>Notificaciones por SMS, app y pantalla en cabina</li>
+        <li>Historial completo de alarmas con tiempo de resolución</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs técnicos -->
+  <div class="tpms-specs">
+    <div class="tpms-spec reveal"><div class="tpms-spec-icon">🔋</div><div><div class="tpms-spec-label">Batería del sensor</div><div class="tpms-spec-value">&gt;3 años / 400,000 km</div></div></div>
+    <div class="tpms-spec reveal"><div class="tpms-spec-icon">🌡️</div><div><div class="tpms-spec-label">Rango de temperatura</div><div class="tpms-spec-value">-40°C a 125°C</div></div></div>
+    <div class="tpms-spec reveal"><div class="tpms-spec-icon">💧</div><div><div class="tpms-spec-label">Impermeabilidad</div><div class="tpms-spec-value">IP69 (sensor) / IP66 (gateway)</div></div></div>
+    <div class="tpms-spec reveal"><div class="tpms-spec-icon">📶</div><div><div class="tpms-spec-label">Comunicación</div><div class="tpms-spec-value">Bluetooth 5.0 + 4G + GPS</div></div></div>
+    <div class="tpms-spec reveal"><div class="tpms-spec-icon">⏱️</div><div><div class="tpms-spec-label">Instalación</div><div class="tpms-spec-value">10 min por unidad</div></div></div>
+    <div class="tpms-spec reveal"><div class="tpms-spec-icon">🎯</div><div><div class="tpms-spec-label">Precisión de presión</div><div class="tpms-spec-value">Error ±20 kPa / temperatura ±1°C</div></div></div>
+  </div>
+</section>
+
+<!-- CPK -->
+<section id="cpk">
+  <div class="cpk-grid">
+    <div class="cpk-info reveal">
+      <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Análisis de costo</span></div>
+      <h2 class="section-title">El precio de la llanta no es el costo real</h2>
+      <p>El error más común es comparar el precio de compra. El costo real se mide en pesos por kilómetro recorrido — y ahí es donde ZG Industries marca la diferencia.</p>
+      <div class="cpk-items">
+        <div class="cpk-item"><div class="cpk-item-icon">⛽</div><div><div class="cpk-item-title">Impacto en combustible</div><div class="cpk-item-desc">Una llanta mal inflada puede incrementar el consumo hasta un 3% por unidad.</div></div></div>
+        <div class="cpk-item"><div class="cpk-item-icon">🔧</div><div><div class="cpk-item-title">Tiempos muertos</div><div class="cpk-item-desc">Cada pinchazo en ruta tiene un costo oculto: mano de obra, tiempo perdido y carga retrasada.</div></div></div>
+        <div class="cpk-item"><div class="cpk-item-icon">♻️</div><div><div class="cpk-item-title">Valor de renovado</div><div class="cpk-item-desc">La correcta gestión de cascos puede extender la vida útil de tu inversión hasta un 60% más.</div></div></div>
+      </div>
+    </div>
+    <div class="cpk-calc reveal">
+      <div class="cpk-calc-title">Calculadora de ahorro CPK</div>
+      <div class="cpk-calc-sub">Estimación rápida · Sin compromiso</div>
+      <div class="calc-field"><label class="calc-label">Número de unidades en flotilla</label><input type="number" class="calc-input" id="unidades" placeholder="Ej: 15" min="1"></div>
+      <div class="calc-field"><label class="calc-label">Kilómetros promedio por unidad/mes</label><input type="number" class="calc-input" id="kms" placeholder="Ej: 8000" min="100"></div>
+      <div class="calc-field"><label class="calc-label">Tipo de operación</label><select class="calc-select" id="tipo"><option value="carretera">Carretera / Larga distancia</option><option value="urbano">Urbano / Distribución</option><option value="campo">Campo / Agroindustria</option><option value="otr">OTR / Construcción</option></select></div>
+      <button class="calc-btn" onclick="calcularCPK()">Calcular mi potencial de ahorro</button>
+      <div class="calc-result" id="calc-result">
+        <div class="calc-result-label">Ahorro estimado mensual</div>
+        <div class="calc-result-value" id="result-value">$0 MXN</div>
+        <div class="calc-result-desc" id="result-desc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORES -->
+<section id="sectores">
+  <div class="sectores-header reveal">
+    <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Industrias que atendemos</span></div>
+    <h2 class="section-title">Tu industria, nuestra especialidad</h2>
+  </div>
+  <div class="sectores-grid">
+    <div class="sector-card agro reveal"><div class="sector-bg">🌾</div><div class="sector-content"><span class="sector-tag">Prioridad · Bajío</span><div class="sector-title">Agroindustria</div><div class="sector-desc">Tractores, implementos agrícolas y maquinaria de campo en toda la región del Bajío</div></div></div>
+    <div class="sector-card transport reveal"><div class="sector-bg">🚛</div><div class="sector-content"><span class="sector-tag">Alta demanda</span><div class="sector-title">Transporte & Carga</div><div class="sector-desc">Flotillas de trailers, distribución y logística regional con análisis de CPK por ruta</div></div></div>
+    <div class="sector-card otr reveal"><div class="sector-bg">⛏️</div><div class="sector-content"><span class="sector-tag">Especialización OTR</span><div class="sector-title">Construcción & Minería</div><div class="sector-desc">Maquinaria pesada, grúas, retroexcavadoras y equipo de movimiento de tierra</div></div></div>
+  </div>
+</section>
+
+<!-- ALIADOS -->
+<section id="aliados">
+  <div class="aliados-header reveal">
+    <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Respaldo de marca</span></div>
+    <h2 class="section-title">Aliados comerciales</h2>
+    <p style="font-family:'Lora',serif;font-size:17px;color:#5A6A7A;max-width:560px;margin:16px auto 0;line-height:1.7;">Trabajamos con distribuidores y marcas líderes en el sector para garantizar calidad y disponibilidad en toda la región.</p>
+  </div>
+  <div class="aliados-grid">
+    <div class="aliado-card reveal">
+      <div class="aliado-logo-ddnai"><span>DDNAI</span><span>Región Bajío</span></div>
+      <div class="aliado-name">DDNAI Región Bajío</div>
+      <div class="aliado-role">Proveedor Oficial</div>
+      <div class="aliado-desc">Distribuidora de Neumáticos Agrícolas e Industriales. Aliado estratégico de distribución con cobertura en toda la región Bajío.</div>
+      <div class="aliado-note">* Logo oficial próximamente</div>
+    </div>
+    <div class="aliado-card reveal">
+      <div class="aliado-logo-seba"><span>SEBA</span><span>Sabe de llantas</span></div>
+      <div class="aliado-name">SEBA</div>
+      <div class="aliado-role">Marca Oficial</div>
+      <div class="aliado-desc">Marca líder en llantas industriales y agrícolas. Calidad comprobada en las condiciones más exigentes del campo y la carretera mexicana.</div>
+      <div class="aliado-note">* Logo oficial próximamente</div>
+    </div>
+    <div class="aliado-card reveal">
+      <div class="aliado-logo-apollo"><span>APOLLO</span><span>Tyres</span></div>
+      <div class="aliado-name">Apollo Tyres</div>
+      <div class="aliado-role">Marca Internacional</div>
+      <div class="aliado-desc">Marca global de llantas con presencia en más de 100 países. Tecnología de punta para vehículos comerciales, trailers y maquinaria pesada.</div>
+      <div class="aliado-note">* Logo oficial próximamente</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-content">
+    <div class="contacto-grid">
+      <div class="contacto-left reveal">
+        <div class="section-label"><div class="section-label-line"></div><span class="section-label-text" style="color:var(--gold-light)">Hablemos de negocios</span></div>
+        <h2 class="section-title">¿Listo para optimizar tu flotilla?</h2>
+        <p>No necesitas cambiar de proveedor de inmediato. Solo danos la oportunidad de mostrarte los números — análisis de CPK sin costo, sin compromiso.</p>
+        <div class="contact-methods">
+          <a href="https://wa.me/524462972345" class="contact-method" target="_blank"><span class="contact-method-icon">💬</span><div><span class="contact-method-label">WhatsApp directo</span><span class="contact-method-value">+52 446 297 2345</span></div></a>
+          <a href="tel:+524462972345" class="contact-method"><span class="contact-method-icon">📞</span><div><span class="contact-method-label">Teléfono</span><span class="contact-method-value">446 297 2345</span></div></a>
+          <div class="contact-method" style="cursor:default;"><span class="contact-method-icon">📍</span><div><span class="contact-method-label">Zona de cobertura</span><span class="contact-method-value">Querétaro · Guanajuato · Bajío</span></div></div>
+        </div>
+      </div>
+      <div class="contacto-form reveal">
+        <div class="form-title">Solicitar cotización</div>
+        <div class="form-sub">Respuesta garantizada en menos de 24 horas</div>
+        <div class="form-field"><label class="form-label">Nombre completo</label><input type="text" class="form-input" id="f-nombre" placeholder="Ej: Carlos Ramírez"></div>
+        <div class="form-field"><label class="form-label">Empresa</label><input type="text" class="form-input" id="f-empresa" placeholder="Nombre de tu empresa"></div>
+        <div class="form-field"><label class="form-label">Teléfono / WhatsApp</label><input type="tel" class="form-input" id="f-tel" placeholder="+52 (___) ___-____"></div>
+        <div class="form-field"><label class="form-label">Tamaño de flotilla</label><select class="form-select" id="f-flotilla"><option value="">Selecciona una opción</option><option>1–5 unidades</option><option>6–20 unidades</option><option>21–50 unidades</option><option>Más de 50 unidades</option></select></div>
+        <div class="form-field"><label class="form-label">Mensaje (opcional)</label><textarea class="form-textarea" id="f-msg" placeholder="Cuéntanos brevemente tu operación..."></textarea></div>
+        <button class="form-btn" onclick="enviarFormulario()">Enviar a WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ZG <span>INDUSTRIES</span></div>
+  <div class="footer-copy">© 2025 ZG Industries · Zermeño Gleason · Todos los derechos reservados</div>
+  <div class="footer-region">Región Bajío · México</div>
+</footer>
+
+<script>
+  var revealEls = document.querySelectorAll(".reveal");
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e, i) {
+      if (e.isIntersecting) { setTimeout(function(){ e.target.classList.add("visible"); }, i * 60); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { obs.observe(el); });
+
+  window.addEventListener("scroll", function() {
+    var nav = document.querySelector("nav");
+    if (window.scrollY > 60) { nav.style.padding = "10px 60px"; } else { nav.style.padding = "16px 60px"; }
+  });
+
+  function calcularCPK() {
+    var u = parseInt(document.getElementById("unidades").value) || 0;
+    var k = parseInt(document.getElementById("kms").value) || 0;
+    var t = document.getElementById("tipo").value;
+    if (!u || !k) { alert("Por favor ingresa el número de unidades y kilómetros."); return; }
+    var f = {carretera:0.032, urbano:0.028, campo:0.038, otr:0.045}[t] || 0.032;
+    var ahorro = Math.round(u * k * f);
+    document.getElementById("result-value").textContent = "$" + ahorro.toLocaleString("es-MX") + " MXN";
+    document.getElementById("result-desc").textContent = "Con " + u + " unidades haciendo " + k.toLocaleString() + " km/mes, tu flotilla tiene un potencial de ahorro estimado en llanta, combustible y mantenimiento. Solicita tu análisis personalizado para los números exactos de tu operación.";
+    var r = document.getElementById("calc-result");
+    r.classList.add("show");
+    r.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function enviarFormulario() {
+    var nombre = document.getElementById("f-nombre").value;
+    var empresa = document.getElementById("f-empresa").value;
+    var tel = document.getElementById("f-tel").value;
+    var flotilla = document.getElementById("f-flotilla").value;
+    var msg = document.getElementById("f-msg").value;
+    if (!nombre || !empresa || !tel) { alert("Por favor completa los campos requeridos."); return; }
+    var texto = "Hola ZG Industries, me llamo *" + nombre + "* de *" + empresa + "*.\n\nTeléfono: " + tel + "\nFlotilla: " + flotilla + (msg ? "\n\nMensaje: " + msg : "") + "\n\nQuiero solicitar una cotización y análisis de CPK.";
+    window.open("https://wa.me/524462972345?text=" + encodeURIComponent(texto), "_blank");
+  }
+</script>
+</body>
+</html>
